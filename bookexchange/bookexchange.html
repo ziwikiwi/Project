@@ -5,7 +5,9 @@
 <body>
 <!-- Ziwei -->
 <!-- ONLY TYPE IN YOUR SECTION OR GITHUB WILL THROW MERGE ERRORS THAT ARE AWFUL TO FIX -->
-  <h1>Welcome to Meteor!</h1>
+    {{>login}}
+
+</body>
 
 
 
@@ -25,5 +27,134 @@
 
 
 <!-- Zhichun-->
+<template name = "login">
+	<div name= "header_bar">
+		<h1>Bookexchange.com</h1> 
+		<form id = login_usernamepassword>
+			Username: <input type="text" name="username" style= "margin-right:30px;">
+			Password: <input type="text" name="password" >
+			<button id = "login_login_button" type="button" >Log in</button>
+		</form>
 
-</body>
+		<hr>
+	</div>
+	<div id = "login_sign_up_part">
+		<h2>Sign Up<br></h2>
+		<p>Join our book community is easy and free</p>
+		<hr style="padding:none;">
+		<form>
+			First name: <input type="text" name="firstname" style="position:absolute;left:975px"><br><br>
+			MI: <input type="text" name="MI" style="position:absolute;left:975px"><br><br>
+			Last name: <input type="text" name="lastname" style="position:absolute;left:975px"><br><br>
+			Email Address: <input type="text" name="emailaddress" style="position:absolute;left:975px"><br><br>
+			Password: <input type="text" name="password" style="position:absolute;left:975px"><br><br>
+			Re-enter Password: <input type="text" name="password_re" style="position:absolute;left:975px"><br><br>
+			<button type="button" >Sign Up!</button>
+		</form>
+	</div>
+	<div id= "login_page_picture" >
+		<img src="https://www.discovermeteor.com/images/book.svg" alt = "login_page_" style="width:45%;height:45%;position:relative;left:200px;">
+	</div>
+
+</template>
+
+<template name = "additional_info_page">
+	<div id= "sign_up_page_additional">
+	<h2>We need some additional info to complete your profile</h2>
+	<hr>
+	<form>
+		Region of Residence:<br> <input type="text" name="residencearea"><br><br>
+		Favorite Book Types:<br> <input type="text" name="favoritebook"><br><br>
+		Personal Signature:<br> <textarea name="personal_signature" rows="10" cols="30"></textarea>
+	</form>
+	<br><br>
+	<button type="button" >Complete Profile</button>
+	<button type="button" >Skip this step</button>
+	</div>
+</template>
+
+<template name = "profile_page">
+	<div id = "profile_top_panel">
+		<span id = "profile_credit_display">Credit: 30</span>
+		<button id = "profile_redeem_button" type="button" >Redeem</button>
+		<button id = "profile_logout_button" type="button" >Log out</button><br>
+		<button id = "profile_update_button" type="button" >Update Profile</button>
+		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/2000px-User_icon_2.svg.png" alt = "user picture"
+		style= "width:150px;height:150px;">
+		
+		<span id = profile_username><strong>eg_username:MDZZ</strong></span><br>
+		<button id = "profiel_changephoto_button" type="button" >Change Photo</button>
+		<span id = "profile_signature">Personal signature here!</span><br>
+		<hr>
+	</div>
+	<div id = "profile_page_body">
+		<br><br>
+		<span>Favorite Books:</span>
+		<div id = "profile_favorite_book_box">mdzz1</div>
+		<p>Books Contributed:</p>
+		<div id = "profile_contribute_book_box">mdzz2</div>
+		<p>Books Donated:</p>
+		<div id = "profile_donated_book_box">mdzz3</div>
+		<button id = "profile_delete_button" type="change Photo">Delete Account</button>
+
+	</div>
+
+</template>
+
+<template name = "redeem_page">
+	<div id = "redeem_page_div">
+	<h2>Redeem Page</h2>
+	<p>Your Credit: 30</p>
+	<hr>
+	<input type="radio" name="gift1" value="gift1" checked>  $5 Amazon Gift Card<br><br>
+ 	<input type="radio" name="gift2" value="gift2"> $5 Starbucks Gift Card<br><br>
+ 	<input type="radio" name="gift3" value="gift3"> Newbook: Threebody<br><br>
+
+ 	<p>Your chosen reward: <br></p>
+ 	<form>
+ 		Name: <input type="text" name="delivername"><br><br>
+ 		Address:<input type="text" name="deliver_address"><br><br>
+ 		<button type="button" >Submmit</button>
+		<button type="button" >Cancel</button>
+
+ 	</form>
+ 	</div>
+</template>
+
+<template name = "donation_page">
+	
+	<div id = "donation_text">
+		<h1 >Thank you for your donation!mdzz</h1>
+		<br>
+		<form >
+			Your name: <input type="text" name="donation_name" style = "position:absolute; left:150px;"><br><br>
+			Quantity: <input type="text" name="donation_quantity" style = "position:absolute; left:150px;"><br><br>
+			Name of Books: <input type="text" name="donation_booknames" style = "position:absolute; left:150px;"><br><br>
+			<button type="button" style = "position:absolute; left:150px;">Add More </button>
+		</form>
+		<br><br>
+		Donation Method: 
+		<select name="donation_method" style = "position:absolute; left:150px;">
+	    <option value="dropbox">Dropbox</option>
+	    <option value="mail">Mail: 308 E Green St, Champaign, IL, 61820</option>
+	  	</select>
+	 	 <br><br>	
+
+	 	Dropbox Location:
+		<select name="dropbox_location" style = "position:absolute; left:150px;">
+	    <option value="dcl">DCL first floor</option>
+	    <option value="grainger">Grainger first floor</option>
+	    <option value="eceb">ECEB first floor</option>
+	    <option value="sieble">SIEBLE first floor</option>
+	    <option value="union">Illini Union</option>
+	    <option value="csl">CSL first floor</option>
+	 	 </select>
+	 	 <br><br>
+	 	 <button type="button" >Submit</button>
+ 	 </div>
+ 	 <div id = donation_picture>
+ 	 	<img src="http://indyfringe.org/sites/default/files//donation_button2.jpg" alt = "donation_picture" style = "width: 600px;height:300px">
+ 	 </div>
+ 	 
+</template>
+

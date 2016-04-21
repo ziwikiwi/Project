@@ -1,1 +1,106 @@
 /* CSS declarations go here */
+/*body{
+	background-image: url("http://www.hdwallpapers.in/walls/abstract_color_background_picture_8016-wide.jpg");
+	background-size: cover;
+	-moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+}*/
+
+/*User profile CSS*/
+#profile_top_panel {
+	background-color: lightblue;
+	padding-bottom: 20px;
+}
+
+#profile_page_body{
+	
+	padding-bottom: 30px;
+}
+#profile_credit_display{
+	margin-left: 500px;
+}
+#profile_logout_button{
+	position:absolute;
+	left:1100px;
+}
+#profile_update_button{
+	position:absolute;
+	left:1100px;
+}
+#profile_username{
+
+	position:relative;
+	bottom: 30px;
+	font-size: 300%;
+}
+#profiel_changephoto_button{
+	position:relative;
+	left: 30px;
+}
+#profile_signature{
+	position:relative;
+	left:30px;
+	border-style: solid;
+	border-color: grey;
+	width: 700px;
+}
+#profile_delete_button{
+	position:absolute;
+	left:1100px;
+}
+#profile_favorite_book_box, #profile_contribute_book_box, #profile_donated_book_box{
+	position:relative;
+	border-width: 1px;
+	border-style: solid;
+	top: -30px;
+	left:150px;
+	width:800px;
+	height:50px;
+}
+
+/*Donation page CSS*/
+#donation_picture{
+	position: relative;
+	left:600px;
+	top: -200px;
+}
+
+/*Redeem page css*/
+#redeem_page_div{
+	text-align: center;
+	border-style: solid;
+	border-color: grey;
+	width:500px;
+	height: 600px;
+
+}
+
+/*Login page CSS*/
+#login_usernamepassword{
+	position:relative;
+	left: 750px;
+	top:-50px;
+}
+#login_sign_up_part{
+	position:right;
+}
+
+#login_sign_up_part{
+	float:right;
+	padding-right: 150px;
+
+}
+#login_page_picture{
+	position:relative;
+	float: left;
+	width:800px;
+}
+#sign_up_page_additional{
+	text-align: center;
+	border-style: solid;
+	border-color: grey;
+	width:500px;
+	height:600px;
+}
+
