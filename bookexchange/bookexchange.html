@@ -6,18 +6,23 @@
 <body>
 <!-- Ziwei -->
 <!-- ONLY TYPE IN YOUR SECTION OR GITHUB WILL THROW MERGE ERRORS THAT ARE AWFUL TO FIX -->
-    {{>login}}
-
 </body>
 
-
-
 <template name="headerbar">
-  
+  <div id="header">
+  		<p><a href='/home'>Bookexchange.com</a></p>
+  		<p><a href='/donation_page'>Donate</a></p>
+  		<p><a href='/home'>Forum</a></p>
+  		<p><a href='/home'>Browse Textbooks</a></p>
+  		<p><a href='/redeem_page'>Redeem</a></p>
+  		<p><a href='/profile_page'>My Account</a></p>
+  		<p><a href='/home'>Sign Out</a></p>
+  </div>
+
 </template>
 
 <template name="home">
-
+	{{>headerbar}}
 </template>
 
 <template name="chatbar">
@@ -29,9 +34,7 @@
 
 <!-- Zhichun-->
 <template name = "login">
-	<div name= "header_bar">
-		<h1>Bookexchange.com</h1> 
-	</div>
+	{{>headerbar}}
 	<div id = "login_signup">
 		<div id= "login_panel">
 
@@ -79,7 +82,7 @@
 	</div>
 </template>
 
-<template name = "profile_page">
+<template name = "profilePage">
 	<div id = "profile_top_panel">
 		<span id = "profile_credit_display">Credit: 30</span>
 		<button id = "profile_redeem_button" type="button" >Redeem</button>
@@ -107,7 +110,7 @@
 
 </template>
 
-<template name = "redeem_page">
+<template name = "redeemPage">
 	<div id = "redeem_page_div">
 	<h2>Redeem Page</h2>
 	<p>Your Credit: 30</p>
@@ -127,7 +130,7 @@
  	</div>
 </template>
 
-<template name = "donation_page">
+<template name = "donationPage">
 	
 	<div id = "donation_text">
 		<h1 >Thank you for your donation!mdzz</h1>

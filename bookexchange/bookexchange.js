@@ -1,19 +1,15 @@
+Router.route('/login');
+Router.route('/',{
+  name:'home',
+  template:'home'
+});
+Router.route('/donation_page');
+Router.route('/redeem_page');
+Router.route('/profile_page');
+Router.route('/logout');
+
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
-
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
 }
 
 if (Meteor.isServer) {
