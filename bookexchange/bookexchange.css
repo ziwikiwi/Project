@@ -6,7 +6,28 @@
     -o-background-size: cover;
     -webkit-background-size: cover;
 }*/
+body{
+	font-family:Arial;
+	font-size: 16px;
+}
 
+/*homepage CSS*/
+form{
+	margin-right:50px;
+	border:2px solid lightblue;
+	padding:10px;
+	font-family: Arial;
+	font-color:#004666;
+}
+form input{
+	float:right;
+	border:2px solid lightblue;
+	padding:5px;
+}
+
+form input:focus{
+	background-color: #e6f7ff;
+}
 /*User profile CSS*/
 #profile_top_panel {
 	background-color: lightblue;
@@ -77,10 +98,17 @@
 }
 
 /*Login page CSS*/
+
+#login_signup{
+	float:right;
+	padding-right: 150px;
+}
 #login_usernamepassword{
-	position:relative;
-	left: 750px;
-	top:-50px;
+	width:330px;
+}
+
+#login_usernamepassword input{
+	float:right;
 }
 #login_sign_up_part{
 	position:right;
@@ -88,13 +116,13 @@
 
 #login_sign_up_part{
 	float:right;
-	padding-right: 150px;
+	
 
 }
-#login_page_picture{
+#login_page_picture img{
 	position:relative;
-	float: left;
-	width:800px;
+	margin-left:250px;
+	width:400px;
 }
 #sign_up_page_additional{
 	text-align: center;
@@ -103,4 +131,3 @@
 	width:500px;
 	height:600px;
 }
-

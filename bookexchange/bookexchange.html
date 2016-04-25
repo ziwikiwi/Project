@@ -1,5 +1,6 @@
 <head>
   <title>Our App</title>
+  <link rel="stylesheet" type="text/css" href="./bookexchange.css">
 </head>
 
 <body>
@@ -30,31 +31,36 @@
 <template name = "login">
 	<div name= "header_bar">
 		<h1>Bookexchange.com</h1> 
-		<form id = login_usernamepassword>
-			Username: <input type="text" name="username" style= "margin-right:30px;">
-			Password: <input type="text" name="password" >
-			<button id = "login_login_button" type="button" >Log in</button>
-		</form>
+	</div>
+	<div id = "login_signup">
+		<div id= "login_panel">
 
-		<hr>
+			<form id = "login_usernamepassword" style="display:inline-block;">
+				<h2>Login<br></h2>
+				Username: <input type="text" name="username"><br><br>
+				Password: <input type="text" name="password" ><br><br>
+				<button id = "login_login_button" type="button" >Log in</button>
+			</form>
+		</div>
+		<div id = "login_sign_up_part">
+			<form>
+				<h2>Sign Up<br></h2>
+				<p>Join our book community! It's easy and free</p>
+				First name: <input type="text" name="firstname"><br><br>
+				MI: <input type="text" name="MI" ><br><br>
+				Last name: <input type="text" name="lastname"><br><br>
+				Email Address: <input type="text" name="emailaddress"><br><br>
+				Password: <input type="text" name="password"><br><br>
+				Re-enter Password: <input type="text" name="password_re"><br><br>
+				<button type="button" >Sign Up!</button>
+			</form>
+		</div>
 	</div>
-	<div id = "login_sign_up_part">
-		<h2>Sign Up<br></h2>
-		<p>Join our book community is easy and free</p>
-		<hr style="padding:none;">
-		<form>
-			First name: <input type="text" name="firstname" style="position:absolute;left:975px"><br><br>
-			MI: <input type="text" name="MI" style="position:absolute;left:975px"><br><br>
-			Last name: <input type="text" name="lastname" style="position:absolute;left:975px"><br><br>
-			Email Address: <input type="text" name="emailaddress" style="position:absolute;left:975px"><br><br>
-			Password: <input type="text" name="password" style="position:absolute;left:975px"><br><br>
-			Re-enter Password: <input type="text" name="password_re" style="position:absolute;left:975px"><br><br>
-			<button type="button" >Sign Up!</button>
-		</form>
-	</div>
+	
 	<div id= "login_page_picture" >
-		<img src="https://www.discovermeteor.com/images/book.svg" alt = "login_page_" style="width:45%;height:45%;position:relative;left:200px;">
+		<img src="https://www.discovermeteor.com/images/book.svg" alt = "login_page_">
 	</div>
+
 
 </template>
 
@@ -114,7 +120,7 @@
  	<form>
  		Name: <input type="text" name="delivername"><br><br>
  		Address:<input type="text" name="deliver_address"><br><br>
- 		<button type="button" >Submmit</button>
+ 		<button type="button" >Submit</button>
 		<button type="button" >Cancel</button>
 
  	</form>
@@ -145,7 +151,7 @@
 	    <option value="dcl">DCL first floor</option>
 	    <option value="grainger">Grainger first floor</option>
 	    <option value="eceb">ECEB first floor</option>
-	    <option value="sieble">SIEBLE first floor</option>
+	    <option value="sieble">SIEBEL first floor</option>
 	    <option value="union">Illini Union</option>
 	    <option value="csl">CSL first floor</option>
 	 	 </select>
