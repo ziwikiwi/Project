@@ -9,26 +9,58 @@
 </body>
 
 <template name="headerbar">
+	
   <div id="header">
-  		<p><a href='/home'>Bookexchange.com</a></p>
+  		<p><a href='/home'>BookExchange.com</a></p>
   		<p><a href='/donation_page'>Donate</a></p>
-  		<p><a href='/home'>Forum</a></p>
-  		<p><a href='/home'>Browse Textbooks</a></p>
+  		<p><a href='/forum'>Forum</a></p>
+  		<p><a href='/browse'>Browse Textbooks</a></p>
   		<p><a href='/redeem_page'>Redeem</a></p>
   		<p><a href='/profile_page'>My Account</a></p>
-  		<p><a href='/home'>Sign Out</a></p>
+  		<p><a href='/login'>Log In</a></p>
   </div>
 
 </template>
 
 <template name="home">
+	<img src="https://www.discovermeteor.com/images/book.svg" id="logo">
 	{{>headerbar}}
+		<h1 style="position:absolute;margin-top:300px;margin-left:375px;">Welcome to BookExchange!</h1>
+		<div id="search_buttons">
+			<p><a href="/bookpage">Search Textbooks</a></p>
+			<p><a href="/bookpage">Search Leisure</a></p>
+		</div>
+		<input style="position:absolute;margin-top:400px; padding:10px;width:800px;">
+	
+
 </template>
 
 <template name="chatbar">
 
 </template>
 
+<template name="bookpage">
+	{{>headerbar}}
+	<div id="book_display">
+		<h3>Love Live</h3>
+		<img src="http://i79.servimg.com/u/f79/15/16/61/05/animep10.jpg">
+		<h2><a href="http://dynasty-scans.com/series/love_live">View PDF online</a></h2>
+	</div>
+	<div id="book_info">
+		<h2><a href="/forum">Forum Post</a></h2>
+		<br>
+		<p>Title</p>
+			<p class="info">Love Live: School Idol Diaries</p>
+		<br>
+		<p>Author</p>
+			<p class="info">Nico Nico Nii</p>
+		<br>
+		<p>Description</p>
+		<br>
+			<p class="info">Owner's description of the item.</p>
+	</div>
+
+</template>
 <!-- Wendy -->
 
 
@@ -67,7 +99,8 @@
 
 </template>
 
-<template name = "additional_info_page">
+<template name = "additionalInfoPage">
+	{{>headerbar}}
 	<div id= "sign_up_page_additional">
 	<h2>We need some additional info to complete your profile</h2>
 	<hr>
@@ -83,6 +116,7 @@
 </template>
 
 <template name = "profilePage">
+	{{>headerbar}}
 	<div id = "profile_top_panel">
 		<span id = "profile_credit_display">Credit: 30</span>
 		<button id = "profile_redeem_button" type="button" >Redeem</button>
@@ -111,7 +145,8 @@
 </template>
 
 <template name = "redeemPage">
-	<div id = "redeem_page_div">
+	{{>headerbar}}
+	<div id = "redeem_page_div" style="margin-auto;">
 	<h2>Redeem Page</h2>
 	<p>Your Credit: 30</p>
 	<hr>
@@ -131,7 +166,7 @@
 </template>
 
 <template name = "donationPage">
-	
+	{{>headerbar}}
 	<div id = "donation_text">
 		<h1 >Thank you for your donation!mdzz</h1>
 		<br>
@@ -166,4 +201,9 @@
  	 </div>
  	 
 </template>
-
+<template name="forum">
+	{{>headerbar}}
+</template>
+<template name="browse">
+	{{>headerbar}}
+</template>

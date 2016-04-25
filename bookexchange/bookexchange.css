@@ -11,18 +11,63 @@ body{
 	font-size: 16px;
 }
 #header{
+	position:relative;
 	margin-top:0px;
+	float:right;
 	padding:10px;
+	margin-bottom:25px;
 	
 }
 #header p {
 	display:inline;
 	padding:10px;
 	font-family: Arial;
+	font-size:20px;
 	background-color: #e6f7ff;
 	border:2px solid lightblue;
 }
+#header p a {
+	text-decoration: none;
+	color: #004666;
+}
+#header p a:hover{
+	color: lightblue;
+}
+#logo{
+	float:left;
+	width:100px;
+	margin-left: 100px;
+}
 
+#search_buttons{
+	position:absolute;
+	padding:10px;
+	margin-top:345px;
+	margin-left: 400px;
+	margin-bottom:25px;
+}
+
+#search_buttons p {
+	display:inline;
+	padding:10px;
+	font-family: Arial;
+	font-size:20px;
+	background-color: #e6f7ff;
+	border:2px solid lightblue;
+}
+#search_buttons p a{
+	text-decoration: none;
+	color: #004666;
+}
+#search_buttons p a:hover{
+	color: lightblue;
+}
+
+button{
+	padding:5px;
+	background-color: #e6f7ff;
+	border:2px solid lightblue;
+}
 
 /*homepage CSS*/
 form{
@@ -41,6 +86,36 @@ form input{
 form input:focus{
 	background-color: #e6f7ff;
 }
+
+#book_display{
+	float:left;
+	margin-left: 100px;
+}
+#book_display img{
+	width:200px;
+}
+
+#book_info{
+	text-align: center;
+	float:right;
+	margin-right:100px;
+	border:2px solid lightblue;
+	padding:10px;
+	width:800px;
+	font-family: Arial;
+	font-color:#004666;
+
+}
+
+a{
+	text-decoration: none;
+	color: #004666;
+}
+.info{
+	border:2px solid lightblue;
+	padding:5px;
+}
+
 /*User profile CSS*/
 #profile_top_panel {
 	background-color: lightblue;
