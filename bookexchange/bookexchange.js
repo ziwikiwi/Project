@@ -10,6 +10,9 @@ Router.route('/browse');
 Router.route('/forum');
 Router.route('/profile_page');
 Router.route('/logout');
+Router.route('/forum_page');
+Router.route('/forums');
+Router.route('/new_post');
 Router.route('/bookpage');
 
 

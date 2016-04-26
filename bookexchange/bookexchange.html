@@ -13,7 +13,7 @@
   <div id="header">
   		<p><a href='/home'>BookExchange.com</a></p>
   		<p><a href='/donation_page'>Donate</a></p>
-  		<p><a href='/forum'>Forum</a></p>
+  		<p><a href='/forums'>Forum</a></p>
   		<p><a href='/browse'>Browse Textbooks</a></p>
   		<p><a href='/redeem_page'>Redeem</a></p>
   		<p><a href='/profile_page'>My Account</a></p>
@@ -47,7 +47,7 @@
 		<h2><a href="http://dynasty-scans.com/series/love_live">View PDF online</a></h2>
 	</div>
 	<div id="book_info">
-		<h2><a href="/forum">Forum Post</a></h2>
+		<h2><a href="/forum_page">Forum Post</a></h2>
 		<br>
 		<p>Title</p>
 			<p class="info">Love Live: School Idol Diaries</p>
@@ -114,7 +114,7 @@
 			</div>
 </template>
 
-<template name = "forum_page">
+<template name = "forumPage">
 	{{>headerbar}}
 	<div id = "forum_page">
 		<table border="5" style="width:100%" bordercolor = "#99d6ff">
@@ -157,7 +157,7 @@
 </template>
 
 
-<template name = "new_post">
+<template name = "newPost">
 	{{>headerbar}}
 	<div id = "new_post">
 		<h1> Create New Post</h1>
@@ -170,7 +170,7 @@
 		<p> Message*:<br></p>
    				<textarea name='message' id='message' rows="20" cols="220" ></textarea><br />
 		<div id = "new_post_buttons">
-			<p><a href="new_post">Post</a></p>
+			<p><a href="/forum_page">Post</a></p>
 		</div>
 	</div>
 </template>
