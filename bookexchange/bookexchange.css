@@ -116,6 +116,90 @@ a{
 	padding:5px;
 }
 
+/*Forums CSS*/
+#new_forum_buttons{
+	position:absolute;
+	padding:10px;
+	margin-top:15px;
+	margin-left:250px;
+	margin-bottom:25px;
+}
+
+#new_forum_buttons p {
+	display:inline;
+	padding:10px;
+	font-family: Arial;
+	font-size:20px;
+	background-color: #e6f7ff;
+	border:2px solid lightblue;
+}
+#new_forum_buttons p a{
+	text-decoration: none;
+	color: #004666;
+}
+#search_forum_buttons{
+	position:absolute;
+	padding:10px;
+	margin-top:15px;
+	margin-left:1250px;
+	margin-bottom:25px;
+}
+
+#search_forum_buttons p {
+	display:inline;
+	padding:10px;
+	font-family: Arial;
+	font-size:20px;
+	background-color: #e6f7ff;
+	border:2px solid lightblue;
+}
+#search_forum_buttons p a{
+	text-decoration: none;
+	color: #004666;
+}
+#search_forum_buttons p a:hover{
+	color: lightblue;
+}
+
+#forum_table{
+	text-align: left;
+}
+th{
+	padding: 20px;
+	font-family:Arial;
+	font-size:25px;
+}
+td {
+  padding: 30px ;
+}
+#new_post{
+	padding-bottom: 30px;
+}
+u{
+	text-decoration: underline;
+}
+
+#new_post_buttons{
+	position:absolute;
+	padding:10px;
+	margin-bottom:25px;
+}
+
+#new_post_buttons p {
+	display:inline;
+	padding:10px;
+	font-family: Arial;
+	font-size:20px;
+	background-color: #e6f7ff;
+	border:2px solid lightblue;
+}
+#new_post_buttons p a{
+	text-decoration: none;
+	color: #004666;
+}
+
+
+
 /*User profile CSS*/
 #profile_top_panel {
 	background-color: lightblue;

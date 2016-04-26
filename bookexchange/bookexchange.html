@@ -62,7 +62,118 @@
 
 </template>
 <!-- Wendy -->
+<template name = "forums">
+	{{>headerbar}}
+		<h1 style = "font-size:75px; font-family: Courier New; margin-left:650px">Forums</h1>
+			<div id = "new_forum_buttons">
+			<p><a href="/new_post">New Post</a></p>
+			</div>
+			<div id="search_forum_buttons">
+				<p><a href="/forum_page">Search Forums</a></p>
+			</div>
+			<input style="position:absolute;margin-top:15px; margin-left:400px;padding:10px;width:800px;">
+			<div id= "forum_table">
+			<table border="10" bordercolor = "#99d6ff" style="width:98%; position:absolute; margin-top:70px;">
+  					<tr>
+    					<th>Forums</th>
+    					<th>Last Post</th>
+    					<th>Replies</th>
+  					</tr>
+  					<tr>
+    					<td style="width:80%">
+    						<a href='/forum_page'>Questions about textbooks</a></td>
+    					<td style="width:15%">March 15, 2016<br> by xyz123</td>
+    					<td style="width:5%">18,233</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Selling calculus III</a></td>	
+    					<td>April 12, 2016<br>by abc567</td>
+   						<td>10,212</td>
+ 	 				</tr>	
+  					<tr>	
+  						<td><a href='/forum_page'>Buying Statistics textbooks for class</a> </td>	
+    					<td>March 3, 2016<br>by abc567</td>
+   						<td>8,002</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Questions</a></td>	
+    					<td>April 20, 2016<br>by sasdfs</td>
+   						<td>2,313</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Selling Mathematical Logic</a></td>	
+    					<td>May 15, 2016<br> by lksjf</td>
+   						<td>893</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Selling Books</a></td>	
+    					<td>January 20, 2016<br>by abdsfc567</td>
+   						<td>203</td>
+  					</tr>
+				</table>
+			</div>
+</template>
 
+<template name = "forum_page">
+	{{>headerbar}}
+	<div id = "forum_page">
+		<table border="5" style="width:100%" bordercolor = "#99d6ff">
+      		<tr>
+				<td>
+					<h1>
+						Questions about textbooks<br>
+					</h1>
+					<h5>
+						Posted by: <u>xyz123</u> <br>
+						Posts:123,888     March 2016<br>
+					</h5>
+					<h3>
+						I have a question about the textbook policy.
+					</h3>
+				</td>
+			</tr>
+		</table>
+		<h2>Comments</h2>
+		<table border="10" style="width:100%" bordercolor = "#99d6ff">
+			<tr>
+				<td style = "width:98%"><u>abc123</u><br>
+					blah blah blah blah<br>
+				</td>
+			</tr>
+			<tr>
+				<td><u>tmzd1234</u><br>
+					blah blah blah blah blah<br>
+				</td>
+			</tr>
+			<tr>
+				<td><u>sldkfj904</u><br>
+					blah blah blah blah blah<br>
+				</td>
+			</tr>
+  			<textarea name='comment' id='comment' value = "Leave a comment..." rows="5" cols="220" ></textarea><br />
+			<input type='submit' value="Post">  
+		</table>
+	</div>
+</template>
+
+
+<template name = "new_post">
+	{{>headerbar}}
+	<div id = "new_post">
+		<h1> Create New Post</h1>
+		<p> Post Type*:<br></p>
+  				<input type="radio" name="q_type" value="questions" checked> Questions
+  				<input type="radio" name="q_type" value="selling"> Selling
+				<input type="radio" name="q_type" value="buying"> Buying
+		<p> Subject*:<br></p>
+		<textarea name='subject' id='subject' rows="2" cols="220" ></textarea><br />
+		<p> Message*:<br></p>
+   				<textarea name='message' id='message' rows="20" cols="220" ></textarea><br />
+		<div id = "new_post_buttons">
+			<p><a href="new_post">Post</a></p>
+		</div>
+	</div>
+</template>
 
 <!-- Zhichun-->
 <template name = "login">
