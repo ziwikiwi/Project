@@ -1,3 +1,4 @@
+
 /* CSS declarations go here */
 /*body{
 	background-image: url("http://www.hdwallpapers.in/walls/abstract_color_background_picture_8016-wide.jpg");
@@ -11,12 +12,8 @@ body{
 	font-size: 16px;
 }
 #header{
-	position:relative;
-	margin-top:0px;
-	float:right;
-	padding:10px;
-	margin-bottom:25px;
 	
+	height: 100px;
 }
 #header p {
 	display:inline;
@@ -33,6 +30,107 @@ body{
 #header p a:hover{
 	color: lightblue;
 }
+
+#chatbar{
+	position:fixed;
+	bottom:0;
+	margin-left:400px;
+}
+#chatbar p{
+	display:inline;
+	padding:10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-family: Arial;
+	font-size:20px;
+	background-color: #e6f7ff;
+	border:2px solid lightblue;
+	width:250px;
+}
+
+#contacts{
+	display:block;
+	position:fixed;
+	z-index: -1;
+	bottom:0;
+	right:0;
+	margin-right:10px;
+}
+
+#collapse_contacts{
+	position:fixed;
+	z-index: 0;
+	bottom:0;
+	right:0;
+	height:30px;
+}
+
+#collapse_contacts table{
+
+	font-family: Arial;
+	font-size:20px;
+	background-color: #e6f7ff;
+	border:2px solid lightblue;
+	width:270px;
+}
+
+
+#contacts table{
+	font-family: Arial;
+	font-size:20px;
+	background-color: #e6f7ff;
+	border:2px solid lightblue;
+	width:270px;
+	padding: 5px;
+}
+
+#contacts table tr{
+	padding: 0px;
+	width:200px;
+}
+
+#contacts table tr:hover{
+	color:blue;
+	border: 2px blue solid;
+}
+
+#chat{
+	position:fixed;
+	width:150px;
+	font-family: Arial;
+	font-size:20px;
+	background-color: #e6f7ff;
+	border:2px solid lightblue;
+	padding: 5px;
+	bottom: 0px;
+	margin-left: 290px;
+}
+
+#chat tr td textarea{
+	resize:none;
+	font-family: Arial;
+	font-size:20px;
+	background-color: white;
+	border:2px solid lightblue;
+	height:50px;
+}
+
+#chat .sender{
+	text-align: left;
+	color: blue;
+}
+
+#chat .receiver{
+	text-align: right;
+	color: darkgrey;
+}
+#header_button
+{
+	position: absolute;
+	left:450px;
+	top:40px;
+}
+
 #logo{
 	float:left;
 	width:100px;
@@ -42,7 +140,7 @@ body{
 #search_buttons{
 	position:absolute;
 	padding:10px;
-	margin-top:345px;
+	margin-top:150px;
 	margin-left: 400px;
 	margin-bottom:25px;
 }
@@ -121,7 +219,7 @@ a{
 	position:absolute;
 	padding:10px;
 	margin-top:15px;
-	margin-left:250px;
+	margin-left:50px;
 	margin-bottom:25px;
 }
 
@@ -141,7 +239,7 @@ a{
 	position:absolute;
 	padding:10px;
 	margin-top:15px;
-	margin-left:1250px;
+	margin-left:1050px;
 	margin-bottom:25px;
 }
 
@@ -164,12 +262,12 @@ a{
 #forum_table{
 	text-align: left;
 }
-th{
+#forum_table th{
 	padding: 20px;
 	font-family:Arial;
 	font-size:25px;
 }
-td {
+#forum_table td {
   padding: 30px ;
 }
 #new_post{
@@ -276,7 +374,8 @@ u{
 	padding-right: 150px;
 }
 #login_usernamepassword{
-	width:330px;
+	position:right;
+	width:310px;
 }
 
 #login_usernamepassword input{
@@ -284,6 +383,7 @@ u{
 }
 #login_sign_up_part{
 	position:right;
+
 }
 
 #login_sign_up_part{

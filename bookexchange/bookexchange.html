@@ -1,3 +1,4 @@
+
 <head>
   <title>Our App</title>
   <link rel="stylesheet" type="text/css" href="./bookexchange.css">
@@ -11,32 +12,106 @@
 <template name="headerbar">
 	
   <div id="header">
+  		<div id = "header_button">
   		<p><a href='/home'>BookExchange.com</a></p>
   		<p><a href='/donation_page'>Donate</a></p>
-  		<p><a href='/forums'>Forum</a></p>
-  		<p><a href='/browse'>Browse Textbooks</a></p>
-  		<p><a href='/redeem_page'>Redeem</a></p>
-  		<p><a href='/profile_page'>My Account</a></p>
-  		<p><a href='/login'>Log In</a></p>
+  		<p><a href='/textbook_forums'>Textbook Forum</a></p>
+  		<p><a href='/lesiure_forums'>Leisurebook Forum</a></p>
+  		
+  		<p><a href='/login'>My Account</a></p>
+  		</div>
+  		<div style = "float:left;">
+  		<img src="https://www.discovermeteor.com/images/book.svg" id="logo">
+  
+  		</div>
   </div>
 
 </template>
 
 <template name="home">
-	<img src="https://www.discovermeteor.com/images/book.svg" id="logo">
+	
 	{{>headerbar}}
-		<h1 style="position:absolute;margin-top:300px;margin-left:375px;">Welcome to BookExchange!</h1>
+		<h1 style="position:absolute;top:150px;margin-left:375px;">Welcome to BookExchange!</h1>
 		<div id="search_buttons">
 			<p><a href="/bookpage">Search Textbooks</a></p>
 			<p><a href="/bookpage">Search Leisure</a></p>
 		</div>
-		<input style="position:absolute;margin-top:400px; padding:10px;width:800px;">
-	
+		<input style="position:absolute;margin-top:200px; left:180px;padding:10px;width:800px;">
+		<div id = "featured_textbook" style="position:absolute;left:250px;top:400px; padding:10px;width:300px;border-style: solid;text-align:center;border-color: lightblue">
+		<h2><a href='/forums'>Textbook</a></h2> 
+		<p>Math 415 Textbook</p>
+		<p>Stat 400 Textbook</p>
+		<p>ECE 391 course notes</p>
+
+		</div>
+		<div id = "featured_leisurebook" style="position:absolute;left:650px;top:400px; padding:10px;width:300px;border-style: solid;text-align: center;border-color: lightblue">
+		<h2><a href='/forums'>Leisure Book</a> </h2> 
+		<p>To kill a mocking bird</p>
+		<p>Harry Potter</p>
+		<p>Norweigian Forest</p>
+		</div>
+	{{>chatbar}}
+
 
 </template>
 
 <template name="chatbar">
+	<div id = "chatbar">
+		<p>Nico Yazawa</p>
+		<p onclick="showChat()">Kousaka Honoka</p>
+		<p>Fedora Tipper</p>
 
+	</div>
+	<div id="contacts">
+	<table>
+			<th onclick="hideContacts()">Contacts</th>
+			<tr><td>Nico Yazawa (A)</td></tr>
+			<tr><td>Kousaka Honoka (A)</td></tr>
+			<tr><td>Fedora Tipper(A)</td></tr>
+			<tr><td>Nozomi Tojo (O)</td></tr>
+			<tr><td>Potato Potato (O)</td></tr>
+	</table>
+	</div>
+
+	<div id="collapse_contacts">
+	<table id="collapse_contacts">
+		<th onclick="showContacts()">Contacts</th>
+	</table>
+	</div>
+
+	<div id= "chat">
+		<table id="chat">
+			<th onclick="hideChat()">Honoka</th>
+			<tr class="sender"><td>Hey! Did you get my message?</td></tr>
+			<tr class="receiver"><td>Yeah! I'll meet you at Siebel at 5pm!</td></tr>
+			<tr class="sender"><td>Ok! See you then :^)</td></tr>
+			<tr ><td id="message"></td></tr>
+			<tr><td><textarea id="box" rows="2">Type Message Here</textarea></td></tr>
+			<tr><td><button onclick="showMessage()">Click to send</button></td></tr>
+		</table>
+	</div>
+	<script>
+		function hideContacts(){
+			document.getElementById("contacts").style.display = 'none';
+			document.getElementById("collapse_contacts").style.display = 'block';
+		}
+		function showContacts(){
+			document.getElementById("collapse_contacts").style.display = 'none';
+			document.getElementById("contacts").style.display = 'block';
+		}
+		function hideChat(){
+			document.getElementById("chat").style.display = 'none';
+
+		}
+		function showChat(){
+			document.getElementById("chat").style.display = 'block';
+		}
+		function showMessage(){
+			var msg = document.getElementById("box").innerHTML;
+			document.getElementById("message").innerHTML = msg;
+		}
+
+	</script>
 </template>
 
 <template name="bookpage">
@@ -62,57 +137,7 @@
 
 </template>
 <!-- Wendy -->
-<template name = "forums">
-	{{>headerbar}}
-		<h1 style = "font-size:75px; font-family: Courier New; margin-left:650px">Forums</h1>
-			<div id = "new_forum_buttons">
-			<p><a href="/new_post">New Post</a></p>
-			</div>
-			<div id="search_forum_buttons">
-				<p><a href="/forum_page">Search Forums</a></p>
-			</div>
-			<input style="position:absolute;margin-top:15px; margin-left:400px;padding:10px;width:800px;">
-			<div id= "forum_table">
-			<table border="10" bordercolor = "#99d6ff" style="width:98%; position:absolute; margin-top:70px;">
-  					<tr>
-    					<th>Forums</th>
-    					<th>Last Post</th>
-    					<th>Replies</th>
-  					</tr>
-  					<tr>
-    					<td style="width:80%">
-    						<a href='/forum_page'>Questions about textbooks</a></td>
-    					<td style="width:15%">March 15, 2016<br> by xyz123</td>
-    					<td style="width:5%">18,233</td>
-  					</tr>
-  					<tr>
-  						<td><a href='/forum_page'>Selling calculus III</a></td>	
-    					<td>April 12, 2016<br>by abc567</td>
-   						<td>10,212</td>
- 	 				</tr>	
-  					<tr>	
-  						<td><a href='/forum_page'>Buying Statistics textbooks for class</a> </td>	
-    					<td>March 3, 2016<br>by abc567</td>
-   						<td>8,002</td>
-  					</tr>
-  					<tr>
-  						<td><a href='/forum_page'>Questions</a></td>	
-    					<td>April 20, 2016<br>by sasdfs</td>
-   						<td>2,313</td>
-  					</tr>
-  					<tr>
-  						<td><a href='/forum_page'>Selling Mathematical Logic</a></td>	
-    					<td>May 15, 2016<br> by lksjf</td>
-   						<td>893</td>
-  					</tr>
-  					<tr>
-  						<td><a href='/forum_page'>Selling Books</a></td>	
-    					<td>January 20, 2016<br>by abdsfc567</td>
-   						<td>203</td>
-  					</tr>
-				</table>
-			</div>
-</template>
+
 
 <template name = "forumPage">
 	{{>headerbar}}
@@ -157,7 +182,7 @@
 </template>
 
 
-<template name = "newPost">
+<template name = "newPost1">
 	{{>headerbar}}
 	<div id = "new_post">
 		<h1> Create New Post</h1>
@@ -170,9 +195,308 @@
 		<p> Message*:<br></p>
    				<textarea name='message' id='message' rows="20" cols="220" ></textarea><br />
 		<div id = "new_post_buttons">
-			<p><a href="/forum_page">Post</a></p>
+			<p><a href="/textbook_forums_added">Post</a></p>
 		</div>
 	</div>
+</template>
+<template name = "newPost2">
+	{{>headerbar}}
+	<div id = "new_post">
+		<h1> Create New Post</h1>
+		<p> Post Type*:<br></p>
+  				<input type="radio" name="q_type" value="questions" checked> Questions
+  				<input type="radio" name="q_type" value="selling"> Selling
+				<input type="radio" name="q_type" value="buying"> Buying
+		<p> Subject*:<br></p>
+		<textarea name='subject' id='subject' rows="2" cols="220" ></textarea><br />
+		<p> Message*:<br></p>
+   				<textarea name='message' id='message' rows="20" cols="220" ></textarea><br />
+		<div id = "new_post_buttons">
+			<p><a href="/leisure_forums_added">Post</a></p>
+		</div>
+	</div>
+</template>
+
+
+<template name = "lesiureForums">
+	{{>headerbar}}
+		<h1 style = "font-size:75px; font-family: Courier New; margin-left:650px">Forums</h1>
+			<div id = "new_forum_buttons">
+			<p><a href="/new_post2">New Post</a></p>
+			</div>
+			<div id="search_forum_buttons">
+				<p><a href="/forum_search_result2">Search Forums</a></p>
+			</div>
+			<input style="position:absolute;margin-top:15px; margin-left:200px;padding:10px;width:800px;">
+			<div id= "forum_table">
+			<table border="10" bordercolor = "#99d6ff" style="width:98%; position:absolute; margin-top:70px;">
+  					<tr>
+    					<th>Forums</th>
+    					<th>Last Post</th>
+    					<th>Replies</th>
+  					</tr>
+  					<tr>
+    					<td style="width:80%">
+    						<a href='/forum_page'>Selling To Kill a Mockingbird</a></td>
+    					<td style="width:15%">March 15, 2016<br> by xyz123</td>
+    					<td style="width:5%">18,233</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Selling The Catcher in the Rye</a></td>	
+    					<td>April 12, 2016<br>by abc567</td>
+   						<td>10,212</td>
+ 	 				</tr>	
+  					<tr>	
+  						<td><a href='/forum_page'>Buying The Great Gatsby</a> </td>	
+    					<td>March 3, 2016<br>by abc567</td>
+   						<td>8,002</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Questions about buying books</a></td>	
+    					<td>April 20, 2016<br>by sasdfs</td>
+   						<td>2,313</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Lord of the Flies</a></td>	
+    					<td>January 20, 2016<br>by abdsfc567</td>
+   						<td>203</td>
+  					</tr>
+				</table>
+			</div>
+</template>
+<template name = "leisureForumsAdded">
+	{{>headerbar}}
+		<h1 style = "font-size:75px; font-family: Courier New; margin-left:650px">Forums</h1>
+			<div id = "new_forum_buttons">
+			<p><a href="/new_post">New Post</a></p>
+			</div>
+			<div id="search_forum_buttons">
+				<p><a href="/forum_search_result2">Search Forums</a></p>
+			</div>
+			<input style="position:absolute;margin-top:15px; margin-left:200px;padding:10px;width:800px;">
+			<div id= "forum_table">
+			<table border="10" bordercolor = "#99d6ff" style="width:98%; position:absolute; margin-top:70px;">
+  					<tr>
+    					<th>Forums</th>
+    					<th>Last Post</th>
+    					<th>Replies</th>
+  					</tr>
+  					<tr>
+    					<td style="width:80%">
+    						<a href='/forum_page'>Anyone want to recommend some books to read?</a></td>
+    					<td style="width:15%">April 28, 2016<br> by xyz123</td>
+    					<td style="width:5%">0</td>
+  					</tr>
+  					<tr>
+    					<td style="width:80%">
+    						<a href='/forum_page'>Selling To Kill a Mockingbird</a></td>
+    					<td style="width:15%">March 15, 2016<br> by xyz123</td>
+    					<td style="width:5%">18,233</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Selling The Catcher in the Rye</a></td>	
+    					<td>April 12, 2016<br>by abc567</td>
+   						<td>10,212</td>
+ 	 				</tr>	
+  					<tr>	
+  						<td><a href='/forum_page'>Buying The Great Gatsby</a> </td>	
+    					<td>March 3, 2016<br>by abc567</td>
+   						<td>8,002</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Questions about buying books</a></td>	
+    					<td>April 20, 2016<br>by sasdfs</td>
+   						<td>2,313</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Lord of the Flies</a></td>	
+    					<td>January 20, 2016<br>by abdsfc567</td>
+   						<td>203</td>
+  					</tr>
+				</table>
+			</div>
+</template>
+
+<template name = "textbookForums">
+	{{>headerbar}}
+		<h1 style = "font-size:75px; font-family: Courier New; margin-left:650px">Forums</h1>
+			<div id = "new_forum_buttons">
+			<p><a href="/new_post1">New Post</a></p>
+			</div>
+			<div id="search_forum_buttons">
+				<p><a href="/forum_search_result1">Search Forums</a></p>
+			</div>
+			<input style="position:absolute;margin-top:15px; margin-left:200px;padding:10px;width:800px;">
+			<div id= "forum_table">
+			<table border="10" bordercolor = "#99d6ff" style="width:98%; position:absolute; margin-top:70px;">
+  					<tr>
+    					<th>Forums</th>
+    					<th>Last Post</th>
+    					<th>Replies</th>
+  					</tr>
+  					<tr>
+    					<td style="width:80%">
+    						<a href='/forum_page'>Questions about textbooks</a></td>
+    					<td style="width:15%">March 15, 2016<br> by xyz123</td>
+    					<td style="width:5%">18,233</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Selling calculus III</a></td>	
+    					<td>April 12, 2016<br>by abc567</td>
+   						<td>10,212</td>
+ 	 				</tr>	
+  					<tr>	
+  						<td><a href='/forum_page'>Buying Statistics textbooks for class</a> </td>	
+    					<td>March 3, 2016<br>by abc567</td>
+   						<td>8,002</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Questions about online textbook</a></td>	
+    					<td>April 20, 2016<br>by sasdfs</td>
+   						<td>2,313</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Selling Mathematical Logic</a></td>	
+    					<td>May 15, 2016<br> by lksjf</td>
+   						<td>893</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Selling Books</a></td>	
+    					<td>January 20, 2016<br>by abdsfc567</td>
+   						<td>203</td>
+  					</tr>
+				</table>
+			</div>
+</template>
+
+<template name = "textbookForumsAdded">
+	{{>headerbar}}
+		<h1 style = "font-size:75px; font-family: Courier New; margin-left:650px">Forums</h1>
+			<div id = "new_forum_buttons">
+			<p><a href="/new_post">New Post</a></p>
+			</div>
+			<div id="search_forum_buttons">
+				<p><a href="/forum_search_result1">Search Forums</a></p>
+			</div>
+			<input style="position:absolute;margin-top:15px; margin-left:200px;padding:10px;width:800px;">
+			<div id= "forum_table">
+			<table border="10" bordercolor = "#99d6ff" style="width:98%; position:absolute; margin-top:70px;">
+  					<tr>
+    					<th>Forums</th>
+    					<th>Last Post</th>
+    					<th>Replies</th>
+  					</tr>
+  					<tr>
+  						<td style="width:80%">
+    						<a href='/forum_page'>Want to sell my stat 400 book</a></td>
+    					<td style="width:15%">April 29, 2016<br> by user</td>
+    					<td style="width:5%">0</td>
+  					</tr>
+  					<tr>
+    					<td style="width:80%">
+    						<a href='/forum_page'>Questions about textbooks</a></td>
+    					<td style="width:15%">March 15, 2016<br> by xyz123</td>
+    					<td style="width:5%">18,233</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Selling calculus III</a></td>	
+    					<td>April 12, 2016<br>by abc567</td>
+   						<td>10,212</td>
+ 	 				</tr>	
+  					<tr>	
+  						<td><a href='/forum_page'>Buying Statistics textbooks for class</a> </td>	
+    					<td>March 3, 2016<br>by abc567</td>
+   						<td>8,002</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Questions about online textbook</a></td>	
+    					<td>April 20, 2016<br>by sasdfs</td>
+   						<td>2,313</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Selling Mathematical Logic</a></td>	
+    					<td>May 15, 2016<br> by lksjf</td>
+   						<td>893</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Selling Books</a></td>	
+    					<td>January 20, 2016<br>by abdsfc567</td>
+   						<td>203</td>
+  					</tr>
+				</table>
+			</div>
+</template>
+
+<template name = "forumSearchResult1">
+	{{>headerbar}}
+		<h1 style = "font-size:75px; font-family: Courier New; margin-left:650px">Forums</h1>
+			<div id = "new_forum_buttons">
+			<p><a href="/new_post">New Post</a></p>
+			</div>
+			<div id="search_forum_buttons">
+				<p><a href="/forum_page">Search Forums</a></p>
+			</div>
+			<input style="position:absolute;margin-top:15px; margin-left:200px;padding:10px;width:800px;">
+			<div id= "forum_table">
+			<table border="10" bordercolor = "#99d6ff" style="width:98%; position:absolute; margin-top:70px;">
+  					<tr>
+    					<th>Forums</th>
+    					<th>Last Post</th>
+    					<th>Replies</th>
+  					</tr>
+  					
+  					<tr>
+  						<td><a href='/forum_page'>Selling calculus III</a></td>	
+    					<td>April 12, 2016<br>by abc567</td>
+   						<td>10,212</td>
+ 	 				</tr>	
+  					
+  					
+  					<tr>
+  						<td><a href='/forum_page'>Selling Mathematical Logic</a></td>	
+    					<td>May 15, 2016<br> by lksjf</td>
+   						<td>893</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Selling Books</a></td>	
+    					<td>January 20, 2016<br>by abdsfc567</td>
+   						<td>203</td>
+  					</tr>
+				</table>
+			</div>
+</template>
+
+<template name = "forumSearchResult2">
+	{{>headerbar}}
+		<h1 style = "font-size:75px; font-family: Courier New; margin-left:650px">Forums</h1>
+			<div id = "new_forum_buttons">
+			<p><a href="/new_post">New Post</a></p>
+			</div>
+			<div id="search_forum_buttons">
+				<p><a href="/forum_page">Search Forums</a></p>
+			</div>
+			<input style="position:absolute;margin-top:15px; margin-left:200px;padding:10px;width:800px;">
+			<div id= "forum_table">
+			<table border="10" bordercolor = "#99d6ff" style="width:98%; position:absolute; margin-top:70px;">
+  					<tr>
+    					<th>Forums</th>
+    					<th>Last Post</th>
+    					<th>Replies</th>
+  					</tr>
+  					<tr>
+    					<td style="width:80%">
+    						<a href='/forum_page'>Selling To Kill a Mockingbird</a></td>
+    					<td style="width:15%">March 15, 2016<br> by xyz123</td>
+    					<td style="width:5%">18,233</td>
+  					</tr>
+  					<tr>
+  						<td><a href='/forum_page'>Selling The Catcher in the Rye</a></td>	
+    					<td>April 12, 2016<br>by abc567</td>
+   						<td>10,212</td>
+ 	 				</tr>	
+  					
+				</table>
+			</div>
 </template>
 
 <!-- Zhichun-->
@@ -185,7 +509,7 @@
 				<h2>Login<br></h2>
 				Username: <input type="text" name="username"><br><br>
 				Password: <input type="text" name="password" ><br><br>
-				<button id = "login_login_button" type="button" >Log in</button>
+				<a href='\profile_page'><button id = "login_login_button" type="button" >Log in</button></a>
 			</form>
 		</div>
 		<div id = "login_sign_up_part">
@@ -198,7 +522,7 @@
 				Email Address: <input type="text" name="emailaddress"><br><br>
 				Password: <input type="text" name="password"><br><br>
 				Re-enter Password: <input type="text" name="password_re"><br><br>
-				<button type="button" >Sign Up!</button>
+				<a href='/additionalInfoPage'> <button type="button" >Sign Up!</button></a>
 			</form>
 		</div>
 	</div>
@@ -216,13 +540,13 @@
 	<h2>We need some additional info to complete your profile</h2>
 	<hr>
 	<form>
-		Region of Residence:<br> <input type="text" name="residencearea"><br><br>
-		Favorite Book Types:<br> <input type="text" name="favoritebook"><br><br>
-		Personal Signature:<br> <textarea name="personal_signature" rows="10" cols="30"></textarea>
+		Region of Residence: <br><input type="text" name="residencearea"><br><br>
+		Favorite Book Types: <br><input type="text" name="favoritebook"><br><br>
+		Personal Signature: <br><textarea name="personal_signature" rows="10" cols="30"></textarea>
 	</form>
 	<br><br>
-	<button type="button" >Complete Profile</button>
-	<button type="button" >Skip this step</button>
+	<a href='/profile_page'><button type="button" >Complete Profile</button></a>
+	<a href='/profile_page'><button type="button" >Skip this step</button></a>
 	</div>
 </template>
 
@@ -230,8 +554,8 @@
 	{{>headerbar}}
 	<div id = "profile_top_panel">
 		<span id = "profile_credit_display">Credit: 30</span>
-		<button id = "profile_redeem_button" type="button" >Redeem</button>
-		<button id = "profile_logout_button" type="button" >Log out</button><br>
+		<a href='/redeem_page'><button id = "profile_redeem_button" type="button" >Redeem</button></a>
+		<a href='/home'><button id = "profile_logout_button" type="button" >Log out</button></a><br>
 		<button id = "profile_update_button" type="button" >Update Profile</button>
 		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/2000px-User_icon_2.svg.png" alt = "user picture"
 		style= "width:150px;height:150px;">
@@ -249,7 +573,7 @@
 		<div id = "profile_contribute_book_box">mdzz2</div>
 		<p>Books Donated:</p>
 		<div id = "profile_donated_book_box">mdzz3</div>
-		<button id = "profile_delete_button" type="change Photo">Delete Account</button>
+		<a href='\home'><button id = "profile_delete_button" type="change Photo" onclick="confirm('Once your account is deleted, you will no longer be able to recover your account information, are you sure?')">Delete Account</button></a>
 
 	</div>
 
@@ -261,16 +585,15 @@
 	<h2>Redeem Page</h2>
 	<p>Your Credit: 30</p>
 	<hr>
-	<input type="radio" name="gift1" value="gift1" checked>  $5 Amazon Gift Card<br><br>
- 	<input type="radio" name="gift2" value="gift2"> $5 Starbucks Gift Card<br><br>
- 	<input type="radio" name="gift3" value="gift3"> Newbook: Threebody<br><br>
+	<input type="checkbox" name="gift1" value="gift1" >  $5 Amazon Gift Card<br><br>
+ 	<input type="checkbox" name="gift2" value="gift2"> $5 Starbucks Gift Card<br><br>
+ 	<input type="checkbox" name="gift3" value="gift3"> Newbook: Threebody<br><br>
 
- 	<p>Your chosen reward: <br></p>
  	<form>
  		Name: <input type="text" name="delivername"><br><br>
  		Address:<input type="text" name="deliver_address"><br><br>
- 		<button type="button" >Submit</button>
-		<button type="button" >Cancel</button>
+ 		<a href='/profile_page'><button type="button" onclick="alert('Your redeem request has been sent, we will deliver your rewards in one bussiness week!')" >Submit</button></a>
+		<a href='/profile_page'><button type="button" >Cancel</button></a>
 
  	</form>
  	</div>
@@ -278,14 +601,16 @@
 
 <template name = "donationPage">
 	{{>headerbar}}
-	<div id = "donation_text">
-		<h1 >Thank you for your donation!mdzz</h1>
+	<div id = "donation_text" >
+		<h1 >Thank you for your donation!</h1>
 		<br>
 		<form >
 			Your name: <input type="text" name="donation_name" style = "position:absolute; left:150px;"><br><br>
 			Quantity: <input type="text" name="donation_quantity" style = "position:absolute; left:150px;"><br><br>
 			Name of Books: <input type="text" name="donation_booknames" style = "position:absolute; left:150px;"><br><br>
-			<button type="button" style = "position:absolute; left:150px;">Add More </button>
+			<input type="text" name="donation_booknames" style = "position:absolute; left:150px;"><br><br>
+			<input type="text" name="donation_booknames" style = "position:absolute; left:150px;"><br><br>
+			
 		</form>
 		<br><br>
 		Donation Method: 
@@ -305,11 +630,9 @@
 	    <option value="csl">CSL first floor</option>
 	 	 </select>
 	 	 <br><br>
-	 	 <button type="button" >Submit</button>
+	 	<a href='/home'><button type="button" onclick="alert('Your donation form has been submitted, after validating your books, we will award 5 credits to each book you donate. Again, thank you for donating your books to help other unfortunate people')">Submit</button></a>
  	 </div>
- 	 <div id = donation_picture>
- 	 	<img src="http://indyfringe.org/sites/default/files//donation_button2.jpg" alt = "donation_picture" style = "width: 600px;height:300px">
- 	 </div>
+ 	
  	 
 </template>
 <template name="forum">
