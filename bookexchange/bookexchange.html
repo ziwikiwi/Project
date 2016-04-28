@@ -85,8 +85,8 @@
 			<tr class="sender"><td>Hey! Did you get my message?</td></tr>
 			<tr class="receiver"><td>Yeah! I'll meet you at Siebel at 5pm!</td></tr>
 			<tr class="sender"><td>Ok! See you then :^)</td></tr>
-			<tr ><td id="message"></td></tr>
-			<tr><td><textarea id="box" rows="2">Type Message Here</textarea></td></tr>
+			<tr class="receiver"><td id="message"></td></tr>
+			<tr><td><textarea id="box" rows="2"></textarea></td></tr>
 			<tr><td><button onclick="showMessage()">Click to send</button></td></tr>
 		</table>
 	</div>
@@ -107,8 +107,10 @@
 			document.getElementById("chat").style.display = 'block';
 		}
 		function showMessage(){
-			var msg = document.getElementById("box").innerHTML;
+			var msg = document.getElementById("box").value;
+			console.log(msg);
 			document.getElementById("message").innerHTML = msg;
+			document.getElementById("box").value = "";
 		}
 
 	</script>
@@ -134,7 +136,7 @@
 		<br>
 			<p class="info">Owner's description of the item.</p>
 	</div>
-
+{{>chatbar}}
 </template>
 <!-- Wendy -->
 
@@ -179,6 +181,7 @@
 			<input type='submit' value="Post">  
 		</table>
 	</div>
+	{{>chatbar}}
 </template>
 
 
@@ -198,6 +201,7 @@
 			<p><a href="/textbook_forums_added">Post</a></p>
 		</div>
 	</div>
+	{{>chatbar}}
 </template>
 <template name = "newPost2">
 	{{>headerbar}}
@@ -215,6 +219,7 @@
 			<p><a href="/leisure_forums_added">Post</a></p>
 		</div>
 	</div>
+	{{>chatbar}}
 </template>
 
 
@@ -263,6 +268,7 @@
   					</tr>
 				</table>
 			</div>
+			{{>chatbar}}
 </template>
 <template name = "leisureForumsAdded">
 	{{>headerbar}}
@@ -315,6 +321,7 @@
   					</tr>
 				</table>
 			</div>
+			{{>chatbar}}
 </template>
 
 <template name = "textbookForums">
@@ -367,6 +374,7 @@
   					</tr>
 				</table>
 			</div>
+			{{>chatbar}}
 </template>
 
 <template name = "textbookForumsAdded">
@@ -425,6 +433,7 @@
   					</tr>
 				</table>
 			</div>
+			{{>chatbar}}
 </template>
 
 <template name = "forumSearchResult1">
@@ -464,6 +473,7 @@
   					</tr>
 				</table>
 			</div>
+			{{>chatbar}}
 </template>
 
 <template name = "forumSearchResult2">
@@ -497,6 +507,7 @@
   					
 				</table>
 			</div>
+			{{>chatbar}}
 </template>
 
 <!-- Zhichun-->
@@ -531,7 +542,6 @@
 		<img src="https://www.discovermeteor.com/images/book.svg" alt = "login_page_">
 	</div>
 
-
 </template>
 
 <template name = "additionalInfoPage">
@@ -548,6 +558,7 @@
 	<a href='/profile_page'><button type="button" >Complete Profile</button></a>
 	<a href='/profile_page'><button type="button" >Skip this step</button></a>
 	</div>
+	{{>chatbar}}
 </template>
 
 <template name = "profilePage">
@@ -576,7 +587,7 @@
 		<a href='\home'><button id = "profile_delete_button" type="change Photo" onclick="confirm('Once your account is deleted, you will no longer be able to recover your account information, are you sure?')">Delete Account</button></a>
 
 	</div>
-
+{{>chatbar}}
 </template>
 
 <template name = "redeemPage">
@@ -597,6 +608,7 @@
 
  	</form>
  	</div>
+ 	{{>chatbar}}
 </template>
 
 <template name = "donationPage">
@@ -632,7 +644,7 @@
 	 	 <br><br>
 	 	<a href='/home'><button type="button" onclick="alert('Your donation form has been submitted, after validating your books, we will award 5 credits to each book you donate. Again, thank you for donating your books to help other unfortunate people')">Submit</button></a>
  	 </div>
- 	
+ 	{{>chatbar}}
  	 
 </template>
 <template name="forum">
