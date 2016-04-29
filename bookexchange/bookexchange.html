@@ -18,7 +18,7 @@
   		<p><a href='/textbook_forums'>Textbook Forum</a></p>
   		<p><a href='/lesiure_forums'>Leisurebook Forum</a></p>
   		
-  		<p><a href='/login'>My Account</a></p>
+  		<p><a href='/login' id = "button1">My Account</a></p>
   		</div>
   		<div style = "float:left;">
   		<img src="https://www.discovermeteor.com/images/book.svg" id="logo">
@@ -38,17 +38,17 @@
 		</div>
 		<input style="position:absolute;margin-top:200px; left:180px;padding:10px;width:800px;">
 		<div id = "featured_textbook" style="position:absolute;left:250px;top:400px; padding:10px;width:300px;border-style: solid;text-align:center;border-color: lightblue">
-		<h2><a href='/forums'>Textbook</a></h2> 
-		<p>Math 415 Textbook</p>
-		<p>Stat 400 Textbook</p>
-		<p>ECE 391 course notes</p>
+		<h2><a href='/textbook_forums'>Textbook</a></h2> 
+		<p><a href="/forum_page"> Math 415 Textbook</a></p>
+		<p><a href="/forum_page">Stat 400 Textbook</a></p>
+		<p><a href="/forum_page">ECE 391 course notes</a></p>
 
 		</div>
 		<div id = "featured_leisurebook" style="position:absolute;left:650px;top:400px; padding:10px;width:300px;border-style: solid;text-align: center;border-color: lightblue">
-		<h2><a href='/forums'>Leisure Book</a> </h2> 
-		<p>To kill a mocking bird</p>
-		<p>Harry Potter</p>
-		<p>Norweigian Forest</p>
+		<h2><a href='/lesiure_forums'>Leisure Book</a> </h2> 
+		<p><a href="/forum_page">To kill a mocking bird</a></p>
+		<p><a href="/forum_page">Harry Potter</a></p>
+		<p><a href="/forum_page">Norweigian Forest</a></p>
 		</div>
 	{{>chatbar}}
 
@@ -65,11 +65,12 @@
 	<div id="contacts">
 	<table>
 			<th onclick="hideContacts()">Contacts</th>
-			<tr><td>Nico Yazawa (A)</td></tr>
+			<tr><td>Yazawa Nico (A)</td></tr>
 			<tr><td>Kousaka Honoka (A)</td></tr>
 			<tr><td>Fedora Tipper(A)</td></tr>
 			<tr><td>Nozomi Tojo (O)</td></tr>
 			<tr><td>Potato Potato (O)</td></tr>
+			<tr id = "added_contact" style="display: none"><td>xyz123</td></tr>
 	</table>
 	</div>
 
@@ -151,7 +152,7 @@
 						Questions about textbooks<br>
 					</h1>
 					<h5>
-						Posted by: <u>xyz123</u> <br>
+						Posted by: <a href="#" onclick="addcontact();event.preventDefault();"><u>xyz123</u> </a><br>
 						Posts:123,888     March 2016<br>
 					</h5>
 					<h3>
@@ -160,6 +161,12 @@
 				</td>
 			</tr>
 		</table>
+		<script type="text/javascript">
+			function addcontact()
+			{
+				document.getElementById("added_contact").style.display = 'block';
+			}
+		</script>
 		<h2>Comments</h2>
 		<table id="forum_comments" border="10" style="width:100%" bordercolor = "#99d6ff">
 			<tr>
@@ -408,7 +415,7 @@
   					</tr>
   					<tr>
   						<td style="width:80%">
-    						<a href='/forum_page'>Want to sell my stat 400 book</a></td>
+    					<a href='/forum_page'>Want to sell my stat 400 book</a></td>
     					<td style="width:15%">April 29, 2016<br> by user</td>
     					<td style="width:5%">0</td>
   					</tr>
@@ -532,9 +539,15 @@
 				<h2>Login<br></h2>
 				Username: <input type="text" name="username"><br><br>
 				Password: <input type="text" name="password" ><br><br>
-				<a href='\profile_page'><button id = "login_login_button" type="button" >Log in</button></a>
+				<a href='\profile_page'><button id = "login_login_button" type="button" onclick="loggedin()">Log in</button></a>
 			</form>
 		</div>
+		<script type="text/javascript">
+			function loggedin()
+			{
+				document.getElementById("button1").href = '/profile_page'
+			}
+		</script>
 		<div id = "login_sign_up_part">
 			<form>
 				<h2>Sign Up<br></h2>
@@ -579,29 +592,106 @@
 		<span id = "profile_credit_display">Credit: 30</span>
 		<a href='/redeem_page'><button id = "profile_redeem_button" type="button" >Redeem</button></a>
 		<a href='/home'><button id = "profile_logout_button" type="button" >Log out</button></a><br>
-		<button id = "profile_update_button" type="button" >Update Profile</button>
+		
 		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/2000px-User_icon_2.svg.png" alt = "user picture"
 		style= "width:150px;height:150px;">
 		
-		<span id = profile_username><strong>eg_username:MDZZ</strong></span><br>
-		<button id = "profiel_changephoto_button" type="button" >Change Photo</button>
-		<span id = "profile_signature">Personal signature here!</span><br>
+		<span id = profile_username><strong>USERNAME</strong></span><br>
+		<a href="/profile_page1"><button id = "profiel_changephoto_button" type="button" >Update Profile</button></a>
+		<span id = "profile_signature" style = "padding-right= 300px;">Personal signature here!</span><br>
 		<hr>
 	</div>
 	<div id = "profile_page_body">
 		<br><br>
 		<span>Favorite Books:</span>
-		<div id = "profile_favorite_book_box">mdzz1</div>
+		<div id = "profile_favorite_book_box">book1</div>
 		<p>Books Contributed:</p>
-		<div id = "profile_contribute_book_box">mdzz2</div>
+		<div id = "profile_contribute_book_box">book2</div>
 		<p>Books Donated:</p>
-		<div id = "profile_donated_book_box">mdzz3</div>
-		<a href='\home'><button id = "profile_delete_button" type="change Photo" onclick="confirm('Once your account is deleted, you will no longer be able to recover your account information, are you sure?')">Delete Account</button></a>
+		<div id = "profile_donated_book_box">book3</div>
+		
+		<p>Validation in Progress:</p>
+		<div id = 'profile_favorite_book_box'>book4</div>
+		<p>Contact Us:</p>
+		<div id = 'profile_favorite_book_box'>email: bookexchange.com<br>phone:123-456-7890<br>address:123 E Green St, Champaign, IL, 61820</div>
 
+		<a href='\home'><button id = "profile_delete_button" type="change Photo" onclick="confirm('Once your account is deleted, you will no longer be able to recover your account information, are you sure?')">Delete Account</button></a>
 	</div>
+	<br><br><br>
 {{>chatbar}}
 </template>
 
+<template name = "profilePage1">
+	{{>headerbar}}
+	<div id = "profile_top_panel">
+		<span id = "profile_credit_display">Credit: 30</span>
+		<a href='/redeem_page'><button id = "profile_redeem_button" type="button" >Redeem</button></a>
+		<a href='/home'><button id = "profile_logout_button" type="button" >Log out</button></a><br>
+		
+		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/2000px-User_icon_2.svg.png" alt = "user picture"
+		style= "width:150px;height:150px;">
+		
+		<span id = profile_username><strong>USERNAME</strong></span><br>
+		<input type="file" id="uploadme" />
+		<a href="/profile_page2"><button id = "profiel_changephoto_button" type="button" >Done</button></a>
+		<input type="text" name="new personal signature" style="margin-left:150px; ">
+		
+		<hr>
+	</div>
+	<div id = "profile_page_body">
+		<br><br>
+		<span>Favorite Books:</span>
+		<div id = "profile_favorite_book_box"><textarea name="personal_signature_new" rows="10" cols="30">boo1</textarea></div>
+		<p>Books Contributed:</p>
+		<div id = "profile_contribute_book_box">book2</div>
+		<p>Books Donated:</p>
+		<div id = "profile_donated_book_box">book3</div>
+		
+		<p>Validation in Progress:</p>
+		<div id = 'profile_favorite_book_box'>book4</div>
+		<p>Contact Us:</p>
+		<div id = 'profile_favorite_book_box'>email: bookexchange.com<br>phone:123-456-7890<br>address:123 E Green St, Champaign, IL, 61820</div>
+
+		<a href='\home'><button id = "profile_delete_button" type="change Photo" onclick="confirm('Once your account is deleted, you will no longer be able to recover your account information, are you sure?')">Delete Account</button></a>
+	</div>
+	<br><br><br>
+{{>chatbar}}
+</template>
+
+<template name = "profilePage2">
+	{{>headerbar}}
+	<div id = "profile_top_panel">
+		<span id = "profile_credit_display">Credit: 30</span>
+		<a href='/redeem_page'><button id = "profile_redeem_button" type="button" >Redeem</button></a>
+		<a href='/home'><button id = "profile_logout_button" type="button" >Log out</button></a><br>
+		
+		<img src="http://tr3.cbsistatic.com/fly/bundles/techrepubliccore/images/icons/standard/icon-user-default.png" alt = "user picture"
+		style= "width:150px;height:150px;">
+		
+		<span id = profile_username><strong>USERNAME</strong></span><br>
+		<a href="/profile_page1"><button id = "profiel_changephoto_button" type="button" >Update Profile</button></a>
+		<span id = "profile_signature" style = "padding-right= 300px;">New Personal signature here!</span><br>
+		<hr>
+	</div>
+	<div id = "profile_page_body">
+		<br><br>
+		<span>Favorite Books:</span>
+		<div id = "profile_favorite_book_box">book5</div>
+		<p>Books Contributed:</p>
+		<div id = "profile_contribute_book_box">book2</div>
+		<p>Books Donated:</p>
+		<div id = "profile_donated_book_box">book3</div>
+		
+		<p>Validation in Progress:</p>
+		<div id = 'profile_favorite_book_box'>book4</div>
+		<p>Contact Us:</p>
+		<div id = 'profile_favorite_book_box'>email: bookexchange.com<br>phone:123-456-7890<br>address:123 E Green St, Champaign, IL, 61820</div>
+
+		<a href='\home'><button id = "profile_delete_button" type="change Photo" onclick="confirm('Once your account is deleted, you will no longer be able to recover your account information, are you sure?')">Delete Account</button></a>
+	</div>
+	<br><br><br>
+{{>chatbar}}
+</template>
 <template name = "redeemPage">
 	{{>headerbar}}
 	<div id = "redeem_page_div" style="margin-auto;">

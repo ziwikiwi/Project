@@ -23,9 +23,11 @@ Router.route('/forum_search_result1');
 Router.route('/forum_search_result2');
 Router.route('/textbook_forums_added');
 Router.route('/leisure_forums_added');
-
+Router.route('/profile_page1');
+Router.route('/profile_page2');
 
 if (Meteor.isClient) {
+    
 
 }
 
