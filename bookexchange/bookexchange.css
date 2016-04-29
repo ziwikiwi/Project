@@ -106,7 +106,7 @@ body{
 	margin-left: 290px;
 }
 
-#chat tr td textarea{
+textarea{
 	resize:none;
 	font-family: Arial;
 	font-size:20px;

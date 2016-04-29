@@ -161,7 +161,7 @@
 			</tr>
 		</table>
 		<h2>Comments</h2>
-		<table border="10" style="width:100%" bordercolor = "#99d6ff">
+		<table id="forum_comments" border="10" style="width:100%" bordercolor = "#99d6ff">
 			<tr>
 				<td style = "width:98%"><u>abc123</u><br>
 					blah blah blah blah<br>
@@ -177,10 +177,22 @@
 					blah blah blah blah blah<br>
 				</td>
 			</tr>
-  			<textarea name='comment' id='comment' value = "Leave a comment..." rows="5" cols="220" ></textarea><br />
-			<input type='submit' value="Post">  
-		</table>
+
+		
+		</table>  			
+		<textarea name='comment' id='comment' placeholder = "Leave a comment..." rows="5" cols="220" ></textarea><br />
+			<button onclick="addComment()">Post</button>  
 	</div>
+	<script>
+		function addComment(){
+			var comments = document.getElementById("forum_comments");
+			var newcomment = comments.insertRow(-1);
+			var string = document.getElementById("comment").value;
+			var nc = newcomment.insertCell(0);
+			nc.innerHTML = "<u>Ziwei Ba</u><br>" + string;
+			document.getElementById("comment").value = "";
+		}
+	</script>
 	{{>chatbar}}
 </template>
 
