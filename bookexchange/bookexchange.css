@@ -10,6 +10,7 @@
 body{
 	font-family:Arial;
 	font-size: 16px;
+	background-image: url("http://tophdimgs.com/data_images/wallpapers/29/426587-parchment.jpg");
 }
 #header{
 	
@@ -94,10 +95,10 @@ body{
 	border: 2px blue solid;
 }
 
-#chat{
-	z-index:1;
+div #chat{
+	z-index:8;
 	display:block;
-	position:fixed;
+	position:absolute;
 	font-family: Arial;
 	font-size:20px;
 	background-color: #e6f7ff;
@@ -105,8 +106,9 @@ body{
 	padding: 5px;
 	bottom: 0;
 	width:250px;
+	margin-left: 550px;
+	margin-bottom: 0px;
 	overflow:hidden;
-	margin-left: 290px;
 }
 
 
@@ -152,8 +154,8 @@ select{
 #search_buttons{
 	position:absolute;
 	padding:10px;
-	margin-top:150px;
-	margin-left: 400px;
+	margin-top:200px;
+	margin-left: 1000px;
 	margin-bottom:25px;
 }
 
