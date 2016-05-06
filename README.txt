@@ -15,5 +15,7 @@ Downloading and installing Meteor:
               -OR-
   Download meteor from the website: https://www.meteor.com/
   
+Downloading and installing Iron Router:
+  Type meteor add iron:router into your command shell. This will make meteor install iron router for you so you can go to different links.
 Running our prototype:
   Open up a command shell. Navigate to the folder you installed Meteor in and type meteor. Our app will launch in localhost:3000. Enjoy!
